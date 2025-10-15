@@ -1,0 +1,14 @@
+{
+  "contacts": [
+    {
+      "id": "",
+      "nom": "",
+      "prenom": "",
+      "telephone": "",
+      "email": "",
+      "adresse": "",
+      "notes": "",
+      "date_ajout": ""
+    }
+  ]
+}
