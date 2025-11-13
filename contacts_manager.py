@@ -65,4 +65,22 @@ class ContactManager:
     with open (FILE, "w", encoding="utf-8") as file:
       json.dump(self.contacts, file, indent=2, ensure_ascii=False)
     print("Contacts sauvegardés avec succès !")
+
+
+  def display_contacts(self):
+    """fonction : AFFICHER LES CONTACTS"""
+    if not self.contacts["contacts"]:
+      print("Fichier vide : aucun contact enrégistré !")
+      return
+
+    for c in self.contacts["contacts"]:
+      print(f"ID: {c["id"]}\n")
+      print(f"Nom: {c["nom"]}\n")
+      print(f"Prénom: {c["prenom"]}\n")
+      print(f"Phone: {c["telephone"]}\n")
+      print(f"Email: {c["email"]}\n")
+      print(f"Adresse: {c["adresse"]}\n")
+      print(f"Notes: {c["notes"]}\n")
+      print(f"Ajouté le: {c["date_ajout"]}\n")
+      print(f"{"-"}"*40)
       
