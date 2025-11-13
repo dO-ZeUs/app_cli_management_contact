@@ -1,8 +1,10 @@
-"""FONCTION main.py EST LA FONCTION PRINCIPALE DE L'APPLICATION"""
+from contacts_manager import ContactManager
+from datetime import datetime
 
-"""AFFICHAGE DU MENU PRINCIPAL"""   
+gestionnaire = ContactManager()
 
-def afficherMenu():
+def displayMenu():
+  """AFFICHAGE DU MENU PRINCIPAL"""   
   print("============== GESTION DES CONTACTS ==============")
   print("1. Ajouter un contact")
   print("2. Afficher tous les contacts")
@@ -13,18 +15,40 @@ def afficherMenu():
 
 
 def main():
+  """FONCTION main.py EST LA FONCTION PRINCIPALE DE L'APPLICATION"""
   while True:
-    afficherMenu()
-    choix = int(input("Votre choix: "))
+    gestionnaire.load_contacts()
+    displayMenu()
+    choice = int(input("Votre choix : "))
 
-    if choix == 1:
-      pass
-    elif choix == 6:
+    if choice == 1:
+      """AJOUTER UN CONTACT"""     
+      name = input("Nom: ")
+      firstname = input("Prénom: ")
+      phone = input("Téléphone: ")
+      email = input("Email: ")
+      address = input("Adresse: ")
+      notes = input("VIP|STANDARD: ")
+      date = datetime.now()
+      date_ajout = date.strftime("%d/%m/%y %H:%M")
+
+      gestionnaire.add_contact(name, firstname, phone, email, address, notes, date_ajout)
+
+    elif choice == 2:
+      """AFFICHER TOUS LES CONTACTS"""
+    elif choice == 3:
+      """RECHERCHER UN CONTACT"""
+    elif choice == 4:
+      """MODIFIER UN CONTACT"""
+    elif choice == 5:
+      """SUPPRIMER UN CONTACT"""
+    elif choice == 6:
+      """QUITTER L'APP"""
       print("Au revoir !")
       break
     else:
-      print("Choix invalide : veuillez rééssayer !")
-      afficherMenu()
+      print("Choix invalide : choix entre (1-6) !")
+      displayMenu()
       choix = int(input("Votre choix: "))
 
 
