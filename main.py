@@ -22,7 +22,8 @@ def main():
     choice = int(input("Votre choix : "))
 
     if choice == 1:
-      """AJOUTER UN CONTACT"""     
+      """AJOUTER UN CONTACT"""
+      print("======== AJOUTER U CONTACT ========")    
       name = input("Nom: ")
       firstname = input("Prénom: ")
       phone = input("Téléphone: ")
@@ -36,8 +37,17 @@ def main():
 
     elif choice == 2:
       """AFFICHER TOUS LES CONTACTS"""
+      print("======== AFFICHER TOUS LES CONTACTS ========")
+      gestionnaire.display_contacts()
+
     elif choice == 3:
       """RECHERCHER UN CONTACT"""
+      print("======== RECHERCHER UN CONTACT ========")
+      name = input("Entrez le nom: ")
+      firstname = input("Entrez le prénom: ")
+      
+      gestionnaire.search_contact(name, firstname)
+
     elif choice == 4:
       """MODIFIER UN CONTACT"""
     elif choice == 5:

@@ -83,4 +83,22 @@ class ContactManager:
       print(f"Notes: {c["notes"]}\n")
       print(f"Ajouté le: {c["date_ajout"]}\n")
       print(f"{"-"}"*40)
+
+  def search_contact(self, name, firstname):
+    """fonction : RECHERCHER UN CONTACT"""
+    for c in self.contacts["contacts"]:
+      if name.upper() == c["nom"] or firstname.capitalize() == c["prenom"]:
+        print(f"ID: {c["id"]}\n")
+        print(f"Nom: {c["nom"]}\n")
+        print(f"Prénom: {c["prenom"]}\n")
+        print(f"Phone: {c["telephone"]}\n")
+        print(f"Email: {c["email"]}\n")
+        print(f"Adresse: {c["adresse"]}\n")
+        print(f"Notes: {c["notes"]}\n")
+        print(f"Ajouté le: {c["date_ajout"]}\n")
+        print(f"{"-"}"*40)
+        return
+      if not name.upper() == c["nom"] and not firstname.capitalize() == c["prenom"]:
+        print("Aucun contact trouvé !")
+        return
       
