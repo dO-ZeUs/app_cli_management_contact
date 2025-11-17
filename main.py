@@ -45,13 +45,16 @@ def main():
       print("======== RECHERCHER UN CONTACT ========")
       name = input("Entrez le nom: ")
       firstname = input("Entrez le prénom: ")
-      
+
       gestionnaire.search_contact(name, firstname)
 
     elif choice == 4:
       """MODIFIER UN CONTACT"""
+      gestionnaire.update_contact()
     elif choice == 5:
       """SUPPRIMER UN CONTACT"""
+      print("======== SUPPRIMER UN CONTACT ========")
+      gestionnaire.delete_contact()
     elif choice == 6:
       """QUITTER L'APP"""
       print("Au revoir !")
@@ -59,7 +62,7 @@ def main():
     else:
       print("Choix invalide : choix entre (1-6) !")
       displayMenu()
-      choix = int(input("Votre choix: "))
+      choice = int(input("Votre choix: "))
 
 
 if __name__ == "__main__":
